@@ -14,8 +14,17 @@
             <input type="text" id="urlInput" placeholder="Enter URL here (D'oh!)">
             <button class="clear-input-btn" onclick="clearInput()" title="Clear URL">X</button>
         </div>
+        <div class="input-group">
+            <input type="file" id="logoInput" accept="image/*" title="Upload a logo (optional)">
+            <button class="clear-input-btn" onclick="clearLogo()" title="Clear Logo">X</button>
+        </div>
         <div class="action-buttons">
-            <select id="sizeSelect" class="size-select">
+            <select id="logoSizeSelect" class="size-select" title="Logo Size">
+                <option value="0.10">Small Logo (10%)</option>
+                <option value="0.20">Medium Logo (20%)</option>
+                <option value="0.30" selected>Large Logo (30%)</option>
+            </select>
+            <select id="sizeSelect" class="size-select" title="QR Code Size">
                 <option value="500">500x500</option>
                 <option value="800">800x800</option>
                 <option value="1000">1000x1000</option>

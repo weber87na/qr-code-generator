@@ -144,8 +144,15 @@ button.secondary-btn:hover {
     box-shadow: 2px 2px 0 #000;
 }
 
-.size-select {
-    padding: 12px;
+/* --- 客製化 Div 下拉選單 --- */
+.custom-select {
+    position: relative;
+    font-family: inherit;
+    min-width: 200px;
+}
+
+.select-selected {
+    padding: 12px 45px 12px 15px;
     border: 3px solid #000;
     border-radius: 8px;
     font-size: 1.2rem;
@@ -153,14 +160,62 @@ button.secondary-btn:hover {
     background-color: #fff;
     box-shadow: 4px 4px 0 #000;
     cursor: pointer;
-    font-family: inherit;
-    outline: none;
+    user-select: none;
     transition: all 0.1s;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 1.2em;
+    text-align: left;
 }
 
-.size-select:hover {
+.select-selected:hover {
     transform: translate(2px, 2px);
     box-shadow: 2px 2px 0 #000;
+}
+
+.select-arrow-active {
+    background-color: #ffd90f; /* 點開時變黃色 */
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 #000;
+}
+
+.select-items {
+    position: absolute;
+    background-color: #fff;
+    top: 110%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    border: 3px solid #000;
+    border-radius: 8px;
+    box-shadow: 4px 4px 0 #000;
+    overflow: hidden;
+}
+
+.select-hide {
+    display: none;
+}
+
+.select-items div {
+    color: #000;
+    padding: 12px 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    border-bottom: 2px solid #ddd;
+    text-align: left;
+    transition: background-color 0.1s;
+}
+
+.select-items div:last-child {
+    border-bottom: none;
+}
+
+.select-items div:hover, .select-items div.is-selected {
+    background-color: #9c27b0; /* 紫色 (Purple) */
+    color: #fff;
 }
 
 .canvas-container {

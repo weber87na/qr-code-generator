@@ -19,16 +19,24 @@
             <button class="clear-input-btn" onclick="clearLogo()" title="Clear Logo">X</button>
         </div>
         <div class="action-buttons">
-            <select id="logoSizeSelect" class="size-select" title="Logo Size">
-                <option value="0.10">Small Logo (10%)</option>
-                <option value="0.20">Medium Logo (20%)</option>
-                <option value="0.30" selected>Large Logo (30%)</option>
-            </select>
-            <select id="sizeSelect" class="size-select" title="QR Code Size">
-                <option value="500">500x500</option>
-                <option value="800">800x800</option>
-                <option value="1000">1000x1000</option>
-            </select>
+            <div class="custom-select" id="logoSizeSelectWrapper" title="Logo Size">
+                <input type="hidden" id="logoSizeSelect" value="0.30">
+                <div class="select-selected">Large Logo (30%)</div>
+                <div class="select-items select-hide">
+                    <div data-value="0.10">Small Logo (10%)</div>
+                    <div data-value="0.20">Medium Logo (20%)</div>
+                    <div data-value="0.30" class="is-selected">Large Logo (30%)</div>
+                </div>
+            </div>
+            <div class="custom-select" id="sizeSelectWrapper" title="QR Code Size">
+                <input type="hidden" id="sizeSelect" value="500">
+                <div class="select-selected">500x500</div>
+                <div class="select-items select-hide">
+                    <div data-value="500" class="is-selected">500x500</div>
+                    <div data-value="800">800x800</div>
+                    <div data-value="1000">1000x1000</div>
+                </div>
+            </div>
             <button class="main-btn" onclick="generateQRCode()">Make QR Code!</button>
             <button class="secondary-btn" id="clearImageBtn" onclick="clearImage()" style="display: none;">Clear Image</button>
         </div>

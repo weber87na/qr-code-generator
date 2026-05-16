@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>QR Code Generator</h1>
+    <div class="container">
+        <div class="input-group">
+            <input type="text" id="urlInput" placeholder="Enter URL here (D'oh!)">
+            <button class="clear-input-btn" onclick="clearInput()" title="Clear URL">X</button>
+        </div>
+        <div class="action-buttons">
+            <select id="sizeSelect" class="size-select">
+                <option value="500">500x500</option>
+                <option value="800">800x800</option>
+                <option value="1000">1000x1000</option>
+            </select>
+            <button class="main-btn" onclick="generateQRCode()">Make QR Code!</button>
+            <button class="secondary-btn" id="clearImageBtn" onclick="clearImage()" style="display: none;">Clear Image</button>
+        </div>
+        
+        <div class="canvas-container" id="canvasContainer">
+            <canvas id="qrcodeCanvas"></canvas>
+            <a id="downloadLink" class="download-btn" download="qrcode.png">Download</a>
+        </div>
+    </div>
+    <footer>
+        <p>Mm... QR Codes... 🍩</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

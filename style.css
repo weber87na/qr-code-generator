@@ -12,6 +12,11 @@ body {
     box-sizing: border-box;
 }
 
+::selection {
+    background-color: #73bced; /* Homer's pants blue */
+    color: #ffffff;
+}
+
 h1 {
     font-size: 3rem;
     color: #ffffff;
